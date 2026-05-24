@@ -1,5 +1,15 @@
 import { useState } from "react";
-import { Briefcase, Code, Layers, GraduationCap, Sparkles, MapPin, Mail, Phone, ExternalLink } from "lucide-react";
+import {
+  Briefcase,
+  Code,
+  Layers,
+  GraduationCap,
+  Sparkles,
+  MapPin,
+  Mail,
+  Phone,
+  ExternalLink,
+} from "lucide-react";
 import Header from "./components/Header";
 import SkillsCloud from "./components/SkillsCloud";
 import ExperienceTimeline from "./components/ExperienceTimeline";
@@ -8,9 +18,11 @@ import AIChatTwin from "./components/AIChatTwin";
 import { resumeData } from "./data";
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<"experience" | "skills" | "projects" | "info">("experience");
+  const [activeTab, setActiveTab] = useState<
+    "experience" | "skills" | "projects" | "info"
+  >("experience");
   const [mobileView, setMobileView] = useState<"resume" | "chat">("resume");
-  
+
   // Easily toggle true/false to show or hide the AI Chat Twin
   const showAITwin = false;
 
@@ -19,8 +31,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#0f1113] text-[#e2e8f0] selection:bg-indigo-500/30 selection:text-indigo-200">
       {/* Centered responsive viewport limits */}
-      <div className="w-full max-w-7xl mx-auto px-4 py-6 md:py-10">
-        
+      <div className="w-full max-w-7xl mx-auto px-0 md:px-4 py-0 md:py-10">
         {/* Full-width header panel */}
         <Header />
 
@@ -52,17 +63,26 @@ export default function App() {
         )}
 
         {/* Primary layout */}
-        <div className={showAITwin ? "grid grid-cols-1 lg:grid-cols-12 gap-6 items-start" : "w-full space-y-6"}>
-          
+        <div
+          className={
+            showAITwin
+              ? "grid grid-cols-1 lg:grid-cols-12 gap-6 items-start"
+              : "w-full space-y-6"
+          }
+        >
           {/* Left Column (Main resume text & sections) - Hidden on mobile if viewing chat */}
           <main
-            className={showAITwin ? `lg:col-span-7 xl:col-span-8 space-y-6 ${
-              mobileView !== "resume" ? "hidden md:block" : ""
-            }` : "space-y-6"}
+            className={
+              showAITwin
+                ? `lg:col-span-7 xl:col-span-8 space-y-6 ${
+                    mobileView !== "resume" ? "hidden md:block" : ""
+                  }`
+                : "space-y-6"
+            }
             id="resume-content-main"
           >
             {/* Tab selection menu */}
-            <nav className="flex flex-nowrap overflow-x-auto bg-[#1a1d21]/50 backdrop-blur-sm border border-gray-800/80 p-1 rounded-2xl space-x-1 shrink-0 scrollbar-none mb-2">
+            <nav className="flex flex-nowrap overflow-x-auto bg-[#1a1d21]/55 backdrop-blur-sm border-y md:border border-x-0 md:border-x border-gray-800/80 p-1 rounded-none md:rounded-2xl space-x-1 shrink-0 scrollbar-none mb-4 md:mb-6">
               <button
                 onClick={() => setActiveTab("experience")}
                 className={`flex items-center gap-2 px-4 py-3 rounded-xl cursor-pointer text-xs md:text-sm font-sans font-semibold whitespace-nowrap transition-all ${
@@ -121,14 +141,20 @@ export default function App() {
               {activeTab === "info" && (
                 <div className="space-y-6">
                   {/* Education card */}
-                  <div className="bg-[#1a1d21] rounded-3xl p-6 border border-gray-800 shadow-xl" id="education-panel">
+                  <div
+                    className="bg-[#1a1d21] rounded-none md:rounded-3xl p-4 md:p-6 border-y md:border border-x-0 md:border-x border-gray-800 shadow-xl"
+                    id="education-panel"
+                  >
                     <h2 className="text-xl md:text-2xl font-sans font-bold text-white flex items-center gap-2 mb-6">
                       <GraduationCap className="w-5 h-5 text-indigo-400" />
                       Academic Background
                     </h2>
                     <div className="space-y-4">
                       {education.map((edu, idx) => (
-                        <div key={idx} className="bg-[#0f1113] border border-gray-800/80 p-5 rounded-2xl flex flex-col md:flex-row justify-between gap-4">
+                        <div
+                          key={idx}
+                          className="bg-[#0f1113] border border-gray-800/80 p-5 rounded-2xl flex flex-col md:flex-row justify-between gap-4"
+                        >
                           <div>
                             <h3 className="text-base font-sans font-bold text-slate-200">
                               {edu.degree}
@@ -146,28 +172,43 @@ export default function App() {
                   </div>
 
                   {/* Reach details */}
-                  <div className="bg-[#1a1d21] rounded-3xl p-6 border border-gray-800 shadow-xl" id="contact-panel">
+                  <div
+                    className="bg-[#1a1d21] rounded-none md:rounded-3xl p-4 md:p-6 border-y md:border border-x-0 md:border-x border-gray-800 shadow-xl"
+                    id="contact-panel"
+                  >
                     <h2 className="text-xl font-sans font-bold text-white mb-6">
                       Get In Touch Directly
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                       <div className="bg-[#0f1113] border border-gray-800 p-4 rounded-2xl text-center flex flex-col items-center justify-center">
                         <Mail className="w-6 h-6 text-indigo-400 mb-2" />
-                        <span className="block text-[11px] font-mono text-slate-500 uppercase tracking-widest">Email</span>
-                        <a href={`mailto:${contact.email}`} className="text-xs md:text-sm font-sans text-slate-300 hover:text-indigo-400 break-all transition-colors mt-1">
+                        <span className="block text-[11px] font-mono text-slate-500 uppercase tracking-widest">
+                          Email
+                        </span>
+                        <a
+                          href={`mailto:${contact.email}`}
+                          className="text-xs md:text-sm font-sans text-slate-300 hover:text-indigo-400 break-all transition-colors mt-1"
+                        >
                           {contact.email}
                         </a>
                       </div>
                       <div className="bg-[#0f1113] border border-gray-800 p-4 rounded-2xl text-center flex flex-col items-center justify-center">
                         <Phone className="w-6 h-6 text-indigo-400 mb-2" />
-                        <span className="block text-[11px] font-mono text-slate-500 uppercase tracking-widest">Phone</span>
-                        <a href={`tel:${contact.phone.replace(/\s+/g, '')}`} className="text-xs md:text-sm font-sans text-slate-300 hover:text-indigo-400 break-all transition-colors mt-1">
+                        <span className="block text-[11px] font-mono text-slate-500 uppercase tracking-widest">
+                          Phone
+                        </span>
+                        <a
+                          href={`tel:${contact.phone.replace(/\s+/g, "")}`}
+                          className="text-xs md:text-sm font-sans text-slate-300 hover:text-indigo-400 break-all transition-colors mt-1"
+                        >
                           {contact.phone}
                         </a>
                       </div>
                       <div className="bg-[#0f1113] border border-gray-800 p-4 rounded-2xl text-center flex flex-col items-center justify-center">
                         <MapPin className="w-6 h-6 text-indigo-400 mb-2" />
-                        <span className="block text-[11px] font-mono text-slate-500 uppercase tracking-widest">Location</span>
+                        <span className="block text-[11px] font-mono text-slate-500 uppercase tracking-widest">
+                          Location
+                        </span>
                         <span className="text-xs md:text-sm font-sans text-slate-300 mt-1">
                           {contact.location}
                         </span>
@@ -190,19 +231,25 @@ export default function App() {
               <AIChatTwin />
             </aside>
           )}
-
         </div>
 
         {/* Dynamic Footer credits */}
-        <footer className="mt-12 pt-8 border-t border-gray-800 text-center text-xs font-mono text-slate-600 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p>© {new Date().getFullYear()} Hari Krishna Salver. All professional rights reserved.</p>
+        <footer className="mt-12 mx-4 md:mx-0 pt-8 border-t border-gray-800 text-center text-xs font-mono text-slate-600 flex flex-col md:flex-row justify-between items-center gap-4 pb-8 md:pb-0">
+          <p>
+            © {new Date().getFullYear()} Hari Krishna Salver. All professional
+            rights reserved.
+          </p>
           <div className="flex gap-4">
-            <a href="https://github.com/76hari" target="_blank" rel="noreferrer" className="hover:text-slate-450 hover:text-indigo-400 transition-colors inline-flex items-center gap-1">
+            <a
+              href="https://github.com/76hari"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-slate-450 hover:text-indigo-400 transition-colors inline-flex items-center gap-1"
+            >
               Github <ExternalLink className="w-3 h-3" />
             </a>
           </div>
         </footer>
-
       </div>
     </div>
   );

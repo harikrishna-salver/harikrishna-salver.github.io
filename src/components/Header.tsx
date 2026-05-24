@@ -1,5 +1,13 @@
 import { motion } from "motion/react";
-import { Mail, Phone, MapPin, Github, Linkedin, Briefcase, FileDown } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Github,
+  Linkedin,
+  Briefcase,
+  FileDown,
+} from "lucide-react";
 import { resumeData } from "../data";
 
 export default function Header() {
@@ -15,7 +23,7 @@ export default function Header() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="relative overflow-hidden rounded-3xl bg-[#1a1d21] p-8 md:p-12 text-white border border-gray-800 shadow-2xl mb-8"
+      className="relative overflow-hidden rounded-none md:rounded-3xl bg-[#1a1d21] p-6 md:p-12 text-white border-y md:border border-x-0 md:border-x border-gray-800 shadow-2xl mb-4 md:mb-8"
       id="profile-header"
     >
       {/* Decorative backdrop glow */}
@@ -51,7 +59,7 @@ export default function Header() {
                 {title}
               </p>
             </div>
-            
+
             {/* Quick Action Buttons */}
             <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
               <button
@@ -73,13 +81,19 @@ export default function Header() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-3 gap-x-6 pt-6 border-t border-slate-800 text-xs md:text-sm font-mono text-slate-400">
             <div className="flex items-center justify-center md:justify-start gap-2">
               <Mail className="w-4 h-4 text-indigo-400 shrink-0" />
-              <a href={`mailto:${contact.email}`} className="hover:text-indigo-400 transition-colors">
+              <a
+                href={`mailto:${contact.email}`}
+                className="hover:text-indigo-400 transition-colors"
+              >
                 {contact.email}
               </a>
             </div>
             <div className="flex items-center justify-center md:justify-start gap-2">
               <Phone className="w-4 h-4 text-indigo-400 shrink-0" />
-              <a href={`tel:${contact.phone.replace(/\s+/g, '')}`} className="hover:text-indigo-400 transition-colors">
+              <a
+                href={`tel:${contact.phone.replace(/\s+/g, "")}`}
+                className="hover:text-indigo-400 transition-colors"
+              >
                 {contact.phone}
               </a>
             </div>
@@ -90,7 +104,12 @@ export default function Header() {
             {contact.linkedin && (
               <div className="flex items-center justify-center md:justify-start gap-2 sm:col-span-2 lg:col-span-1">
                 <Linkedin className="w-4 h-4 text-purple-400 shrink-0" />
-                <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-indigo-400 transition-colors">
+                <a
+                  href={contact.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-indigo-400 transition-colors"
+                >
                   linkedin.com/in/harikrishnasalver
                 </a>
               </div>

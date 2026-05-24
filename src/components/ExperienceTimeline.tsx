@@ -1,6 +1,17 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Briefcase, MapPin, Calendar, ChevronDown, ChevronUp, Star, Award, Sparkles, Zap, CheckCircle2 } from "lucide-react";
+import {
+  Briefcase,
+  MapPin,
+  Calendar,
+  ChevronDown,
+  ChevronUp,
+  Star,
+  Award,
+  Sparkles,
+  Zap,
+  CheckCircle2,
+} from "lucide-react";
 import { resumeData } from "../data";
 
 export default function ExperienceTimeline() {
@@ -8,14 +19,18 @@ export default function ExperienceTimeline() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0); // Default first item expanded
 
   return (
-    <div className="bg-[#1a1d21] rounded-3xl p-6 border border-gray-800 shadow-xl" id="experience-section">
+    <div
+      className="bg-[#1a1d21] rounded-none md:rounded-3xl p-4 md:p-6 border-y md:border border-x-0 md:border-x border-gray-800 shadow-xl"
+      id="experience-section"
+    >
       <div className="mb-6">
         <h2 className="text-xl md:text-2xl font-sans font-bold text-white flex items-center gap-2">
           <Briefcase className="w-5 h-5 text-indigo-400" />
           Professional Timeline
         </h2>
         <p className="text-xs md:text-sm font-sans text-slate-400 mt-1">
-          9.5 years of industry tenure leading teams, building media players, and deploying AI enhancements.
+          9.5 years of industry tenure leading teams, building media players,
+          and deploying AI enhancements.
         </p>
       </div>
 
@@ -56,7 +71,9 @@ export default function ExperienceTimeline() {
 
                     {/* Meta info (Company, location, date) */}
                     <div className="flex flex-wrap items-center gap-y-1.5 gap-x-4 mt-1.5 text-xs font-mono text-slate-400">
-                      <span className="text-slate-200 font-semibold">{exp.company}</span>
+                      <span className="text-slate-200 font-semibold">
+                        {exp.company}
+                      </span>
                       <span className="flex items-center gap-1">
                         <MapPin className="w-3.5 h-3.5 text-slate-500" />
                         {exp.location}
@@ -70,7 +87,11 @@ export default function ExperienceTimeline() {
 
                   {/* Toggle controls */}
                   <button className="self-end md:self-start p-1.5 bg-slate-900 border border-slate-800 rounded-lg text-slate-400 hover:text-white hover:bg-indigo-500/25 hover:border-indigo-500/30 transition-colors cursor-pointer">
-                    {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                    {isExpanded ? (
+                      <ChevronUp className="w-4 h-4" />
+                    ) : (
+                      <ChevronDown className="w-4 h-4" />
+                    )}
                   </button>
                 </div>
 
@@ -89,11 +110,17 @@ export default function ExperienceTimeline() {
                           const isSpecial =
                             bullet.title.toLowerCase().includes("ai") ||
                             bullet.title.toLowerCase().includes("award") ||
-                            bullet.title.toLowerCase().includes("architecture") ||
-                            bullet.title.toLowerCase().includes("optimisation") ||
+                            bullet.title
+                              .toLowerCase()
+                              .includes("architecture") ||
+                            bullet.title
+                              .toLowerCase()
+                              .includes("optimisation") ||
                             bullet.title.toLowerCase().includes("stability");
 
-                          const isAward = bullet.title.toLowerCase().includes("award");
+                          const isAward = bullet.title
+                            .toLowerCase()
+                            .includes("award");
 
                           return (
                             <div key={bIdx} className="flex gap-3">

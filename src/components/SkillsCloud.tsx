@@ -1,6 +1,13 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Search, Sparkles, Code, Server, ShieldCheck, Heart } from "lucide-react";
+import {
+  Search,
+  Sparkles,
+  Code,
+  Server,
+  ShieldCheck,
+  Heart,
+} from "lucide-react";
 import { resumeData } from "../data";
 
 export default function SkillsCloud() {
@@ -13,7 +20,7 @@ export default function SkillsCloud() {
     cat.skills.map((skill) => ({
       name: skill,
       category: cat.category,
-    }))
+    })),
   );
 
   // Filter categories
@@ -21,8 +28,11 @@ export default function SkillsCloud() {
 
   // Filter skills based on search term and category
   const filteredSkills = allSkillsFlat.filter((sk) => {
-    const matchesCategory = activeCategory === "All" || sk.category === activeCategory;
-    const matchesSearch = sk.name.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory =
+      activeCategory === "All" || sk.category === activeCategory;
+    const matchesSearch = sk.name
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
@@ -43,7 +53,10 @@ export default function SkillsCloud() {
   };
 
   return (
-    <div className="bg-[#1a1d21] rounded-3xl p-6 border border-gray-800 shadow-xl" id="skills-cloud-section">
+    <div
+      className="bg-[#1a1d21] rounded-none md:rounded-3xl p-4 md:p-6 border-y md:border border-x-0 md:border-x border-gray-800 shadow-xl"
+      id="skills-cloud-section"
+    >
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
         <div>
           <h2 className="text-xl md:text-2xl font-sans font-bold text-white flex items-center gap-2">
@@ -51,7 +64,8 @@ export default function SkillsCloud() {
             Technical Expertise
           </h2>
           <p className="text-xs md:text-sm font-sans text-slate-400 mt-1">
-            Core capabilities structured across frontend architecture, full-stack pipelines, and developer tooling.
+            Core capabilities structured across frontend architecture,
+            full-stack pipelines, and developer tooling.
           </p>
         </div>
 
@@ -109,7 +123,7 @@ export default function SkillsCloud() {
                   <span className="text-xs md:text-sm font-sans text-slate-300 group-hover:text-white transition-colors">
                     {sk.name}
                   </span>
-                  
+
                   {/* Category mini pill on hover */}
                   <span className="absolute -top-7 left-1/2 transform -translate-x-1/2 bg-[#0f1113] text-slate-400 border border-gray-800 text-[10px] font-mono whitespace-nowrap px-2 py-1 rounded-md opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity z-10 shadow-lg">
                     {sk.category}
@@ -124,7 +138,10 @@ export default function SkillsCloud() {
               className="flex flex-col items-center justify-center py-12 text-slate-500"
             >
               <Search className="w-8 h-8 opacity-40 mb-2" />
-              <p className="text-xs font-mono">No matching skills found. Try searching for "React" or "Actions".</p>
+              <p className="text-xs font-mono">
+                No matching skills found. Try searching for "React" or
+                "Actions".
+              </p>
             </motion.div>
           )}
         </AnimatePresence>
@@ -134,14 +151,20 @@ export default function SkillsCloud() {
       {activeCategory === "All" && searchTerm === "" && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 pt-6 border-t border-gray-800">
           {skillCategories.map((cat) => (
-            <div key={cat.category} className="bg-[#0f1113]/55 p-4 rounded-2xl border border-gray-800">
+            <div
+              key={cat.category}
+              className="bg-[#0f1113]/55 p-4 rounded-2xl border border-gray-800"
+            >
               <h3 className="text-xs md:text-sm font-mono text-slate-300 font-bold mb-3 flex items-center gap-2">
                 {getCategoryIcon(cat.category)}
                 {cat.category}
               </h3>
               <div className="flex flex-wrap gap-1.5">
                 {cat.skills.slice(0, 6).map((sk) => (
-                  <span key={sk} className="text-[11px] font-mono px-2 py-1 bg-slate-900 border border-gray-850 text-slate-400 rounded-md">
+                  <span
+                    key={sk}
+                    className="text-[11px] font-mono px-2 py-1 bg-slate-900 border border-gray-850 text-slate-400 rounded-md"
+                  >
                     {sk}
                   </span>
                 ))}
