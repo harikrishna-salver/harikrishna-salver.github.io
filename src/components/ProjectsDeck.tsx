@@ -11,12 +11,16 @@ export default function ProjectsDeck() {
   const tagsList = ["All", ...Array.from(new Set(projects.map((p) => p.tag)))];
 
   // Filter projects by tag
-  const filteredProjects = selectedTag === "All"
-    ? projects
-    : projects.filter((p) => p.tag === selectedTag);
+  const filteredProjects =
+    selectedTag === "All"
+      ? projects
+      : projects.filter((p) => p.tag === selectedTag);
 
   return (
-    <div className="bg-[#1a1d21] rounded-3xl p-6 border border-gray-800 shadow-xl" id="projects-section">
+    <div
+      className="bg-[#1a1d21] rounded-none md:rounded-3xl p-4 md:p-6 border-y md:border border-x-0 md:border-x border-gray-800 shadow-xl"
+      id="projects-section"
+    >
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
         <div>
           <h2 className="text-xl md:text-2xl font-sans font-bold text-white flex items-center gap-2">
@@ -24,7 +28,8 @@ export default function ProjectsDeck() {
             Core Projects & Showcases
           </h2>
           <p className="text-xs md:text-sm font-sans text-slate-400 mt-1">
-            In-depth details of systems architected with focus on scale, modularity, and AI integrations.
+            In-depth details of systems architected with focus on scale,
+            modularity, and AI integrations.
           </p>
         </div>
 
