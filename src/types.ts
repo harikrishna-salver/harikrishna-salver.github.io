@@ -54,7 +54,7 @@ export interface ResumeData {
 
 export interface ChatMessage {
   id: string;
-  sender: 'user' | 'assistant';
+  sender: "user" | "assistant";
   text: string;
   timestamp: string;
 }

@@ -13,11 +13,6 @@ import { resumeData } from "../data";
 export default function Header() {
   const { name, title, summary, contact } = resumeData;
 
-  // Handler to print page cleanly (can represent actual resume print layout)
-  const handlePrint = () => {
-    window.print();
-  };
-
   return (
     <motion.header
       initial={{ opacity: 0, y: -20 }}
@@ -62,14 +57,15 @@ export default function Header() {
 
             {/* Quick Action Buttons */}
             <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
-              <button
-                onClick={handlePrint}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-[#0f1113] hover:bg-slate-900 border border-slate-800 rounded-xl text-xs font-mono font-medium text-slate-300 hover:text-white transition-all cursor-pointer shadow-md"
-                id="btn-print-resume"
+              <a
+                href="/Resume.pdf"
+                download="Resume Hari Krishna Salver.pdf"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-[#0f1113] hover:bg-slate-900 border border-slate-800 rounded-xl text-xs font-mono font-medium text-slate-300 hover:text-white transition-all cursor-pointer shadow-md group"
+                id="btn-download-resume"
               >
-                <FileDown className="w-4 h-4 text-indigo-400" />
-                Print Resume
-              </button>
+                <FileDown className="w-4 h-4 text-indigo-400 group-hover:scale-110 transition-transform" />
+                Resume
+              </a>
             </div>
           </div>
 

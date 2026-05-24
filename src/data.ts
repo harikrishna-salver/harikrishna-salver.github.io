@@ -241,7 +241,13 @@ export const resumeData: ResumeData = {
         "Created an end-to-end continuous integration tool using GitHub Actions and Cursor AI integrations to automatically lint, analyze security, and suggest fixes on open Pull Requests.",
       impact:
         "Accelerated internal code review cycle speeds, saving engineering check-in times and increasing overall developer workflow productivity by 25%.",
-      technologies: ["Node.js", "GitHub Actions", "Cursor AI", "ESLint", "Security Auditing"],
+      technologies: [
+        "Node.js",
+        "GitHub Actions",
+        "Cursor AI",
+        "ESLint",
+        "Security Auditing",
+      ],
     },
     {
       id: "cicd-fast",
@@ -251,7 +257,12 @@ export const resumeData: ResumeData = {
         "Redesigned Jenkins build jobs with selective caching and parallelization strategies. Migrated crucial legacy tests and builds to GitHub Actions and leveraged build matrix parameters.",
       impact:
         "Reduced total Jenkins build cycles from 30m to 22m (~25% decrease) and slashed unit test suite execution runtimes in half, from 15m down to 8m.",
-      technologies: ["GitHub Actions", "Jenkins", "Caching", "Webpack & Vite bundlers"],
+      technologies: [
+        "GitHub Actions",
+        "Jenkins",
+        "Caching",
+        "Webpack & Vite bundlers",
+      ],
     },
     {
       id: "percipio-player",
@@ -261,7 +272,12 @@ export const resumeData: ResumeData = {
         "Authored PercipioPlayer utilizing HTML5 Video.js API hooks for micro-tracking content retention. Iterated and deployed Book Reader 2.0 complying with strict WCAG guidelines.",
       impact:
         "Reduced common video playback lag complaints by 40% and provided screen-reader keyboard navigable features ensuring 100% inclusive education reach.",
-      technologies: ["Video.js", "React", "ARIA patterns", "JAWS / NVDA support"],
+      technologies: [
+        "Video.js",
+        "React",
+        "ARIA patterns",
+        "JAWS / NVDA support",
+      ],
     },
     {
       id: "egnify-academic",
@@ -271,7 +287,12 @@ export const resumeData: ResumeData = {
         "Engineered a database-driven analytics platform for local schools. It converts complex student score tallies into beautifully formatted, high-volume automated progress reports.",
       impact:
         "Replaced manual paper calculations, streamlined school board reporting workflows, and eliminated over 40% of legacy duplicate helper functions.",
-      technologies: ["Ruby on Rails", "React", "MySQL", "CSS Page Printing Modules"],
+      technologies: [
+        "Ruby on Rails",
+        "React",
+        "MySQL",
+        "CSS Page Printing Modules",
+      ],
     },
   ],
 };
