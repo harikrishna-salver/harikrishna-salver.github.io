@@ -8,7 +8,7 @@ import {
   ShieldCheck,
   Heart,
 } from "lucide-react";
-import { resumeData } from "../data";
+import { resumeData } from "../../constants/data";
 
 export default function SkillsCloud() {
   const { skillCategories } = resumeData;

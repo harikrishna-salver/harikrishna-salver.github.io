@@ -14,6 +14,7 @@ export interface ProjectShowcase {
   description: string;
   impact: string;
   technologies: string[];
+  url?: string;
 }
 
 export interface WorkExperience {

@@ -1,4 +1,4 @@
-import { ResumeData } from "./types";
+import { ResumeData } from "../types/common";
 
 export const resumeData: ResumeData = {
   name: "Hari Krishna Salver",
@@ -224,75 +224,31 @@ export const resumeData: ResumeData = {
   ],
   projects: [
     {
-      id: "ai-summarizer",
-      title: "AI Video & Course Summarizer",
-      tag: "AI Innovation",
+      id: "cosmaLauncher",
+      title: "Cosma Launcher",
+      tag: "Productivity & Mobile UX",
       description:
-        "Seamlessly integrated OpenAI GPT models into Skillsoft's Percipio platform to auto-generate high-quality transcripts, interactive summaries, and content indexes.",
+        "An elegant, ultra-minimalist launch interface engineered to systematically reduce screen-time, categorize native utilities dynamically, and offer sub-millisecond tactile launcher actions.",
       impact:
-        "Improved active learner comprehension and content clarity ratings by 30% while reducing time-to-insight for video course-takers.",
-      technologies: ["React", "Express", "OpenAI GPT APIs", "GraphQL", "Redux"],
+        "Successfully achieved high active retention rates by offering a clean, customizable dashboard showing vital focus statistics and rapid application launching without the usual noise.",
+      technologies: [
+        "TypeScript",
+        "React Native",
+        "Android Core",
+        "Tailwind CSS",
+      ],
+      url: "/projects/cosma-launcher",
     },
     {
-      id: "ai-code-reviewer",
-      title: "Self-Healing AI Code Reviewer",
-      tag: "Productivity Tooling",
+      id: "countdown",
+      title: "Countdown",
+      tag: "Utility & Time Management",
       description:
-        "Created an end-to-end continuous integration tool using GitHub Actions and Cursor AI integrations to automatically lint, analyze security, and suggest fixes on open Pull Requests.",
+        "A beautifully designed, distraction-free countdown timer application for Android that helps you cherish and track your most significant life milestone dates and focus intervals with elegance.",
       impact:
-        "Accelerated internal code review cycle speeds, saving engineering check-in times and increasing overall developer workflow productivity by 25%.",
-      technologies: [
-        "Node.js",
-        "GitHub Actions",
-        "Cursor AI",
-        "ESLint",
-        "Security Auditing",
-      ],
-    },
-    {
-      id: "cicd-fast",
-      title: "CI/CD Pipeline Accelerator",
-      tag: "DevOps & Core Infrastructure",
-      description:
-        "Redesigned Jenkins build jobs with selective caching and parallelization strategies. Migrated crucial legacy tests and builds to GitHub Actions and leveraged build matrix parameters.",
-      impact:
-        "Reduced total Jenkins build cycles from 30m to 22m (~25% decrease) and slashed unit test suite execution runtimes in half, from 15m down to 8m.",
-      technologies: [
-        "GitHub Actions",
-        "Jenkins",
-        "Caching",
-        "Webpack & Vite bundlers",
-      ],
-    },
-    {
-      id: "percipio-player",
-      title: "Custom Media Player & Accessible Reader",
-      tag: "Media Engineering",
-      description:
-        "Authored PercipioPlayer utilizing HTML5 Video.js API hooks for micro-tracking content retention. Iterated and deployed Book Reader 2.0 complying with strict WCAG guidelines.",
-      impact:
-        "Reduced common video playback lag complaints by 40% and provided screen-reader keyboard navigable features ensuring 100% inclusive education reach.",
-      technologies: [
-        "Video.js",
-        "React",
-        "ARIA patterns",
-        "JAWS / NVDA support",
-      ],
-    },
-    {
-      id: "egnify-academic",
-      title: "High-Volume Academic Report Generator",
-      tag: "Full-Stack Development",
-      description:
-        "Engineered a database-driven analytics platform for local schools. It converts complex student score tallies into beautifully formatted, high-volume automated progress reports.",
-      impact:
-        "Replaced manual paper calculations, streamlined school board reporting workflows, and eliminated over 40% of legacy duplicate helper functions.",
-      technologies: [
-        "Ruby on Rails",
-        "React",
-        "MySQL",
-        "CSS Page Printing Modules",
-      ],
+        "Designed with Jetpack Compose and minimal design templates to lower baseline visual cognitive load, offering widget setups and robust custom reminders.",
+      technologies: ["Kotlin", "Android SDK", "Jetpack Compose", "Material 3"],
+      url: "/projects/countdown",
     },
   ],
 };

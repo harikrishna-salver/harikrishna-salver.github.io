@@ -86,23 +86,45 @@ app.post("/api/chat", async (req, res) => {
     });
 
     // Check if GEMINI_API_KEY is available
-    if (!process.env.GEMINI_API_KEY || process.env.GEMINI_API_KEY === "MY_GEMINI_API_KEY") {
+    if (
+      !process.env.GEMINI_API_KEY ||
+      process.env.GEMINI_API_KEY === "MY_GEMINI_API_KEY"
+    ) {
       // Graceful fallback for demo when API key is unconfigured
       console.warn("GEMINI_API_KEY not configured. Running in fallback mode.");
-      
-      const lastUserMsg = messages[messages.length - 1]?.text?.toLowerCase() || "";
-      let replyText = "Hi there! I am Hari's AI Twin. Currently, my live Gemini API connection is in demo offline mode, but I can surely answer your questions! ";
-      
-      if (lastUserMsg.includes("skill") || lastUserMsg.includes("stack") || lastUserMsg.includes("technolog")) {
-        replyText += "My core skills lie in Frontend Platform Architecture, React, Redux, TypeScript, and Node.js. I have also integrated OpenAI GPT APIs to build automated summarizations and AI code reviewers! What specific part of my background would you like to discuss?";
-      } else if (lastUserMsg.includes("experience") || lastUserMsg.includes("work") || lastUserMsg.includes("job") || lastUserMsg.includes("company")) {
-        replyText += "I am currently a Senior Software Engineer II at Skillsoft, where I build the Percipio learning platform, scale GraphQL API gateways, optimize CI/CD pipelines, and mentor junior developers. Prior to this, I worked at Egnify Technologies and Tazzobikes! You can feel free to contact me at harikrishna.salver@gmail.com for more information.";
-      } else if (lastUserMsg.includes("contact") || lastUserMsg.includes("email") || lastUserMsg.includes("phone")) {
-        replyText += "You can reach me directly at harikrishna.salver@gmail.com, or give me a call at +91 94940 59837. I am based in Hyderabad, India!";
+
+      const lastUserMsg =
+        messages[messages.length - 1]?.text?.toLowerCase() || "";
+      let replyText =
+        "Hi there! I am Hari's AI Twin. Currently, my live Gemini API connection is in demo offline mode, but I can surely answer your questions! ";
+
+      if (
+        lastUserMsg.includes("skill") ||
+        lastUserMsg.includes("stack") ||
+        lastUserMsg.includes("technolog")
+      ) {
+        replyText +=
+          "My core skills lie in Frontend Platform Architecture, React, Redux, TypeScript, and Node.js. I have also integrated OpenAI GPT APIs to build automated summarizations and AI code reviewers! What specific part of my background would you like to discuss?";
+      } else if (
+        lastUserMsg.includes("experience") ||
+        lastUserMsg.includes("work") ||
+        lastUserMsg.includes("job") ||
+        lastUserMsg.includes("company")
+      ) {
+        replyText +=
+          "I am currently a Senior Software Engineer II at Skillsoft, where I build the Percipio learning platform, scale GraphQL API gateways, optimize CI/CD pipelines, and mentor junior developers. Prior to this, I worked at Egnify Technologies and Tazzobikes! You can feel free to contact me at harikrishna.salver@gmail.com for more information.";
+      } else if (
+        lastUserMsg.includes("contact") ||
+        lastUserMsg.includes("email") ||
+        lastUserMsg.includes("phone")
+      ) {
+        replyText +=
+          "You can reach me directly at harikrishna.salver@gmail.com, or give me a call at +91 94940 59837. I am based in Hyderabad, India!";
       } else {
-        replyText += "I have over 9.5 years of experience building high-scale frontends. Reach me directly at harikrishna.salver@gmail.com to learn more, or check my experience and projects tabs is this portal!";
+        replyText +=
+          "I have over 9.5 years of experience building high-scale frontends. Reach me directly at harikrishna.salver@gmail.com to learn more, or check my experience and projects tabs is this portal!";
       }
-      
+
       return res.json({ text: replyText });
     }
 

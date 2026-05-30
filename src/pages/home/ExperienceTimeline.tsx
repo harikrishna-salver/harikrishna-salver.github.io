@@ -6,13 +6,11 @@ import {
   Calendar,
   ChevronDown,
   ChevronUp,
-  Star,
   Award,
   Sparkles,
   Zap,
-  CheckCircle2,
 } from "lucide-react";
-import { resumeData } from "../data";
+import { resumeData } from "../../constants/data";
 
 export default function ExperienceTimeline() {
   const { experience } = resumeData;

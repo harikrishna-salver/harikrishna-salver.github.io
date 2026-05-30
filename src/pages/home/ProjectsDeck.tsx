@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion } from "motion/react";
-import { Layers, Spotlight } from "lucide-react";
-import { resumeData } from "../data";
+import { Layers } from "lucide-react";
+import { Link } from "react-router-dom";
+import { resumeData } from "../../constants/data";
 
 export default function ProjectsDeck() {
   const { projects } = resumeData;
@@ -72,9 +73,17 @@ export default function ProjectsDeck() {
               </span>
 
               {/* Title */}
-              <h3 className="text-base md:text-lg font-sans font-extrabold text-white group-hover:text-indigo-300 transition-colors">
-                {proj.title}
-              </h3>
+              {proj.url ? (
+                <Link to={proj.url} className="block group/link mt-1">
+                  <h3 className="text-base md:text-lg font-sans font-extrabold text-white group-hover/link:text-indigo-400 hover:underline decoration-indigo-500/50 decoration-2 transition-colors">
+                    {proj.title}
+                  </h3>
+                </Link>
+              ) : (
+                <h3 className="block text-base md:text-lg font-sans font-extrabold text-white transition-colors mt-1">
+                  {proj.title}
+                </h3>
+              )}
 
               {/* Description */}
               <p className="text-xs md:text-sm font-sans text-slate-300 leading-relaxed mt-2.5">

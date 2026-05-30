@@ -1,14 +1,6 @@
 import { motion } from "motion/react";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Github,
-  Linkedin,
-  Briefcase,
-  FileDown,
-} from "lucide-react";
-import { resumeData } from "../data";
+import { Mail, Phone, MapPin, Linkedin, FileDown } from "lucide-react";
+import { resumeData } from "../../constants/data";
 
 export default function Header() {
   const { name, title, summary, contact } = resumeData;
