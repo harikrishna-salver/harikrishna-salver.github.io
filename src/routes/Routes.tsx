@@ -4,7 +4,7 @@ import {
   Route,
   useNavigate,
   useParams,
-  HashRouter,
+  BrowserRouter,
   useLocation,
 } from "react-router-dom";
 import HomePage from "../pages/home/HomePage";
@@ -70,11 +70,11 @@ export function AppRoutes() {
 
 export default function AppRouter() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <ScrollToTop />
       <div className="min-h-screen bg-[#0f1113] text-[#e2e8f0] selection:bg-indigo-500/30 selection:text-indigo-200">
         <AppRoutes />
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
