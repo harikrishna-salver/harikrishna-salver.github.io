@@ -157,6 +157,23 @@ async function initialize() {
       appType: "spa",
     });
     app.use(vite.middlewares);
+
+    // Fallback for development to serve transformed index.html on deep paths
+    const fs = await import("fs");
+    app.get("*", async (req, res, next) => {
+      if (req.originalUrl.startsWith("/api")) {
+        return next();
+      }
+      try {
+        const htmlPath = path.resolve(process.cwd(), "index.html");
+        let template = fs.readFileSync(htmlPath, "utf-8");
+        template = await vite.transformIndexHtml(req.originalUrl, template);
+        res.status(200).set({ "Content-Type": "text/html" }).end(template);
+      } catch (err: any) {
+        vite.ssrFixStacktrace(err);
+        next(err);
+      }
+    });
   } else {
     const distPath = path.join(process.cwd(), "dist");
     app.use(express.static(distPath));
