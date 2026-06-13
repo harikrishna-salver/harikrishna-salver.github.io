@@ -34,26 +34,12 @@ export default function CosmaLauncherPage({
             <h1 className="text-2xl md:text-3xl font-sans font-extrabold text-white">
               Cosma Launcher
             </h1>
-            <span className="bg-indigo-500/10 text-indigo-400 border border-indigo-500/30 font-mono text-[9px] uppercase font-bold px-2 py-0.5 rounded tracking-wide">
-              v1.4.0 Live
-            </span>
           </div>
           <p className="text-xs md:text-sm font-sans text-slate-400 max-w-xl">
             A secure, offline, content-first tactile mobile portal crafted for
             absolute digital workspace wellness.
           </p>
         </div>
-
-        {/* Play Store Link action */}
-        <a
-          href="https://play.google.com/store/apps/details?id=com.hks.cosma_launcher"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="cursor-pointer shrink-0 inline-flex items-center gap-2.5 px-5 py-3 bg-[#0f1113] hover:bg-slate-900 text-white font-mono text-xs font-semibold rounded-2xl border border-gray-800 shadow-xl transition-all"
-          id="btn-playstore-link"
-        >
-          <span>View on Google Play Store</span>
-        </a>
       </section>
 
       {/* Navigation sub-tabs for product views */}
